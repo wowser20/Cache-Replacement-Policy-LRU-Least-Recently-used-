@@ -2,6 +2,7 @@
 This program can solve and show solution on every page using Least Recently Used Cache Replacement Policy.
 
 HOW TO USE THE PROGRAM
-1. Run using any IDE that supports Java.
-2. Type the number of frames(should be separated with spaces)
-3. Click Find.
+1. Download LeastRecentlyUsed.jar(make sure you have Java JDK version 11 installed already to run the program.)
+2. Run "LeastRecentlyUsed.jar" 
+3. Type the number of frames(should be separated with spaces)
+4. Click Find.
