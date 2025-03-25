@@ -36,8 +36,6 @@ import javax.swing.JTextField;
 
 @SuppressWarnings("serial")
 public class LeastRecentlyUsedGUI extends JFrame implements ActionListener, MouseListener{
-	
-	
 	private JLabel lbl_title1, lbl_blockrqst, lbl_numberframes,lbl_background,lbl_minimize,lbl_exit;
 	private JButton btn_find, btn_clear1, btn_clear2, btn_help, btn_about;
 	private JTextField txt_blockrqst, txt_numberframes;
@@ -49,12 +47,9 @@ public class LeastRecentlyUsedGUI extends JFrame implements ActionListener, Mous
 	
 	
 LeastRecentlyUsedGUI(){
-	
-	
 	Container pane = getContentPane();
 	pane.setLayout(null);
 	pane.setBackground(new Color(57, 172, 115));
-	
 	
 	panel_background = new JPanel();
 	panel_background.setLayout(null);
@@ -63,7 +58,6 @@ LeastRecentlyUsedGUI(){
 	panel_header = new JPanel();
 	panel_header.setBackground(Color.WHITE);
 	panel_header.setLayout(null);
-
 	
 	panel_all = new JPanel();
 	panel_all.setLayout(null);
@@ -99,17 +93,12 @@ LeastRecentlyUsedGUI(){
 	txt_blockrqst = new JTextField("");
 	txt_blockrqst.setFont(new Font("Dialog",Font.PLAIN,15));
 		
-	
-	
 	txt_numberframes = new JTextField("");
 	txt_numberframes.setFont(new Font("Dialog",Font.PLAIN,15));
-	
-	
 	
 	txt_results = new JTextArea("");
 	txt_results.setEditable(false);
 	txt_results.setFont(new Font("Dialog", Font.PLAIN,17));	
-	
 	
 	btn_find = new JButton("Find");
 	btn_find.setBackground(new Color(122, 209, 167));
@@ -121,12 +110,10 @@ LeastRecentlyUsedGUI(){
 	btn_clear1.setFont(new Font("Dialog", Font.BOLD, 15));	
 	btn_clear1.setForeground(Color.white);
 	
-	
 	btn_clear2 = new JButton("Clear");
 	btn_clear2.setBackground(new Color(122, 209, 167));
 	btn_clear2.setFont(new Font("Dialog", Font.BOLD, 15));	
 	btn_clear2.setForeground(Color.WHITE);
-	
 	
 	btn_help = new JButton("Instructions");
 	btn_help.setBackground(new Color(122, 209, 167));
@@ -138,25 +125,19 @@ LeastRecentlyUsedGUI(){
 	btn_about.setFont(new Font("Dialog", Font.BOLD, 15));	
 	btn_about.setForeground(Color.WHITE);
 	
-	
 	panel_results=new JPanel();
 	panel_results.setBorder(BorderFactory.createTitledBorder("RESULTS"));
 	panel_results.setBackground(Color.WHITE);
 	panel_results.setFont(new Font("Dialog", Font.BOLD, 18));	
 	
-	
-	
-	
 	scroller=new JScrollPane(txt_results);
 	scroller.setViewportView(txt_results);
 	scroller.setBorder(null);
-	
 	
 	panel_header.add(lbl_minimize).setBounds(970,0,24,24);
 	panel_header.add(lbl_exit).setBounds(1010,0,30,30);
 	
 	panel_results.add(txt_results);	
-	
 
 	panel_all.add(lbl_numberframes).setBounds(50, 70, 150,25);panel_all.add(txt_numberframes).setBounds(200,70,50,25);
 	panel_all.add(lbl_blockrqst).setBounds(50,120,150,25);panel_all.add(txt_blockrqst).setBounds(200,120,400,25);
@@ -164,13 +145,10 @@ LeastRecentlyUsedGUI(){
 	panel_all.add(panel_results).setBounds(40, 210, 900,300);panel_all.add(btn_clear2).setBounds(410,520,100,30);
 	panel_all.add(scroller).setBounds(60,230,875,275);
 
-	
-
 	pane.add(panel_header).setBounds(0,0,1050,30);
 	pane.add(lbl_background).setBounds(30,35,70,70);
 	pane.add(lbl_title1).setBounds(110,60,600,40);
 	pane.add(panel_all).setBounds(30,115,980,560);
-	
 	
 	setSize(1040,700);
 	setUndecorated(true);
@@ -178,7 +156,6 @@ LeastRecentlyUsedGUI(){
 	setVisible(true);
 	setDefaultCloseOperation(EXIT_ON_CLOSE);
 
-	
 	panel_header.addMouseListener(this);
 	lbl_minimize.addMouseListener(this);
 	lbl_exit.addMouseListener(this);
@@ -189,22 +166,13 @@ LeastRecentlyUsedGUI(){
 	btn_about.addActionListener(this);
 	
 }
-
-
 public static void main (String[]args) throws IOException {
-	
-	
 	new LeastRecentlyUsedGUI();
-	
-
 }
 
-
+// this is where I've placed the functions of every button.
 @Override
-public void actionPerformed(ActionEvent e) {//This is where I've placed the functions of every button.
-	
-	// TODO Auto-generated method stub
-	
+public void actionPerformed(ActionEvent e) {
 	if(e.getSource().equals(btn_find)) {
 		String numberframes, solution="",solution1="",solution2="",solution3="",result1,format = "",str_all = "",str_intro = "",table="",format_hit="",format_fault="",conclusion1,conclusion2;
 		double hit2, fault2,ref_len2;
@@ -221,8 +189,7 @@ public void actionPerformed(ActionEvent e) {//This is where I've placed the func
 		 else {
 			 
 		 
-		try {{
-		
+		try {{ 
             int frames = 0;
             int pointer = 0;
             Boolean isFull = false;
@@ -340,10 +307,8 @@ public void actionPerformed(ActionEvent e) {//This is where I've placed the func
     		scroller.setBorder(null);
         }
 		}
-			 
 	catch(Exception r) {
 		JOptionPane.showMessageDialog(null,"Please input the values correctly, make sure the block request are separated by spaces");
-		
 	}
 	}
 	}
@@ -354,11 +319,9 @@ public void actionPerformed(ActionEvent e) {//This is where I've placed the func
 		
 	}
 	else if(e.getSource().equals(btn_clear2)) {
-		
 		txt_results.setText("");
 	}
 	else if(e.getSource().equals(btn_help)) {
-		
 		String instruction ="1. Type the number of frames."+
 		"\n2. Type the block request (Make sure the block requests are separated by spaces)."+
 		"\n3. Click find.";
@@ -367,7 +330,6 @@ public void actionPerformed(ActionEvent e) {//This is where I've placed the func
 	
 	}
 	else if(e.getSource().equals(btn_about)) {
-		
 		JOptionPane.showMessageDialog(null, "Least Recently Used (LRU) is a common caching strategy."+
 		"\nIt defines the policy to evict elements from the cache to make room for new elements when the cache is full, "
 		+"\nmeaning it discards the least recently used items first.","About",JOptionPane.INFORMATION_MESSAGE);
@@ -376,63 +338,27 @@ public void actionPerformed(ActionEvent e) {//This is where I've placed the func
 
 @Override
 public void mouseClicked(MouseEvent e) {
-	
 	if(e.getSource().equals(lbl_minimize)) {
-		
 		setState(ICONIFIED);
 	}
 	
 	else if(e.getSource().equals(lbl_exit)) {
 		dispose();
-		System.exit(0);
-		
+		System.exit(0);s
 	}
-	
-	// TODO Auto-generated method stub
-	
 }
 
-
 @Override
-public void mousePressed(MouseEvent e) {
-	// TODO Auto-generated method stub 
-	
+public void mousePressed(MouseEvent e) { 
 	xMouse = e.getX();
 	yMouse = e.getY();
 	
 }
 
-
-@Override
-public void mouseReleased(MouseEvent e) {
-	// TODO Auto-generated method stub
-
-	
-	
-}
-
-
-@Override
-public void mouseEntered(MouseEvent e) {
-	// TODO Auto-generated method stub
-	
-}
-
-
-@Override
-public void mouseExited(MouseEvent e) {
-	// TODO Auto-generated method stub
-	
-}
 public void mouseDragged(MouseEvent e) {
-	
-
 	int x = e.getXOnScreen();
 	int y = e.getYOnScreen();
 	
-	
 	setLocation(x - xMouse,y - yMouse);
-	
-	
 }
 }
